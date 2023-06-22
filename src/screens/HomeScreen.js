@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import React from "react";
+import React, { useState } from "react";
 import {
   StyleSheet,
   Text,
@@ -10,6 +10,13 @@ import {
 import Icon from "react-native-vector-icons/FontAwesome";
 
 function HomeScreen() {
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [conCode, setConCode] = useState("+92");
+  const handleContinue = () => {
+    phoneNumber.length === 10 && conCode.length === 3
+      ? alert("Loading... Confirming Phone Number...")
+      : alert("Invalid Phone Number or Country Code");
+  };
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Let's get started!</Text>
@@ -21,6 +28,9 @@ function HomeScreen() {
             placeholder="+92"
             placeholderTextColor="gray"
             keyboardType="phone-pad"
+            value={conCode}
+            onChangeText={setConCode}
+            maxLength={3}
           />
         </View>
         <View style={styles.phoneNumberContainer}>
@@ -29,11 +39,13 @@ function HomeScreen() {
             placeholder="3001234567"
             placeholderTextColor="gray"
             keyboardType="phone-pad"
+            value={phoneNumber}
+            onChangeText={setPhoneNumber}
           />
         </View>
       </View>
 
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={handleContinue}>
         <Icon
           name="arrow-right"
           size={20}
