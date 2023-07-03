@@ -3,28 +3,36 @@ import React from "react";
 import PhoneInput from "react-native-phone-number-input";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
+import { useNavigation } from "@react-navigation/native";
+import { useState } from "react";
 
-function HomeScreen({ phoneNumber, setPhoneNumber, error }) {
+function HomeScreen() {
+  const navigation = useNavigation();
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [error, setError] = useState(false);
+
+  const handleContinue = () => {
+    if (phoneNumber.length === 10) {
+      navigation.navigate("OtpScreen", { phoneNumber: phoneNumber });
+    } else {
+      setError(true);
+    }
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Let's get started!</Text>
       <Text style={styles.titletwo}>Please enter your mobile number</Text>
       <View style={styles.inputContainer}>
-        <PhoneInput
-          value={phoneNumber}
-          onChangeFormattedText={setPhoneNumber}
-        />
+        <PhoneInput value={phoneNumber} onChangeText={setPhoneNumber} />
       </View>
+      {error && <Text style={styles.errorText}>Invalid phone number</Text>}
 
-      {error ? null : (
-        <Text style={styles.errorText}>Invalid phone number</Text>
-      )}
-
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={handleContinue}>
         <Icon
           name="arrow-right"
           size={20}
-          color="grey"
+          color="white"
           style={styles.buttonIcon}
         />
         <Text style={styles.buttonText}>Continue</Text>
@@ -54,19 +62,19 @@ const styles = StyleSheet.create({
     color: "white",
   },
   buttonText: {
-    color: "grey",
+    color: "white",
     fontSize: 18,
     fontWeight: "bold",
   },
   button: {
     backgroundColor: "transparent",
-    borderColor: "black",
-    borderWidth: 1,
-    borderRadius: 8,
+    // borderColor: "black",
+    // borderWidth: 1,
+    // borderRadius: 8,
     padding: 10,
     marginTop: 20,
     flexDirection: "row-reverse",
-    marginLeft: 70,
+    justifyContent: "center",
   },
   inputContainer: {
     flexDirection: "row",
@@ -97,7 +105,7 @@ const styles = StyleSheet.create({
   },
 
   errorText: {
-    Color: "red",
+    color: "red",
   },
 });
 

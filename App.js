@@ -1,8 +1,13 @@
 import React from "react";
-import HomeContainer from "./src/container/HomeContainer";
+import { NavigationContainer } from "@react-navigation/native";
+import Navigation from "./src/routes/Navigation";
 
 function App() {
-  return <HomeContainer />;
+  return (
+    <NavigationContainer>
+      <Navigation />
+    </NavigationContainer>
+  );
 }
 
 export default App;
