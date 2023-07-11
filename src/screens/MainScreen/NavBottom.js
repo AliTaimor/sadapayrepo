@@ -1,15 +1,15 @@
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { useState } from "react";
-import Icon from "react-native-vector-icons/Ionicons";
 import { useNavigation } from "@react-navigation/native";
+import { Ionicons } from '@expo/vector-icons';
 
 function NavBottom() {
   const [activeTab, setActiveTab] = useState("");
   const tab = [
-    { name: "Personal", icon: "ios-home" },
-    { name: "Payments", icon: "ios-cash" },
-    { name: "More", icon: "ios-menu" },
+    { name: "Personal", Ionicons: "ios-home" },
+    { name: "Payments", Ionicons: "ios-cash" },
+    { name: "More", Ionicons: "ios-menu" },
   ];
   const navigation = useNavigation();
   const handleNavigation = (index) => {
@@ -30,8 +30,8 @@ function NavBottom() {
           style={styles.tab}
           onPress={() => handleNavigation(index)}
         >
-          <Icon
-            name={tab.icon}
+          <Ionicons
+            name={tab.Ionicons}
             size={24}
             color={activeTab === index ? "#007AFF" : "#999999"}
           />

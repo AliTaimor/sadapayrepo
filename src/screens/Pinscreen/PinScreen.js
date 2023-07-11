@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Icon from "react-native-vector-icons/FontAwesome";
+import { Ionicons } from "@expo/vector-icons";
+
 import myLogo from "../../Image/myLogo.png";
 
 import {
@@ -55,7 +57,7 @@ function PinScreen({ navigation }) {
         <TouchableOpacity onPress={confirmingPin}>
           <View style={styles.nextText}>
             <Text style={styles.textNext}>Next</Text>
-            <Icon name="chevron-right" style={styles.nextIcon} />
+            <Ionicons name="ios-arrow-forward" style={styles.nextIcon} />
           </View>
         </TouchableOpacity>
       </View>

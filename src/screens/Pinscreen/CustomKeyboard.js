@@ -1,6 +1,7 @@
 import React from "react";
 import { View, TouchableOpacity, Text, StyleSheet } from "react-native";
-import Icon from "react-native-vector-icons/FontAwesome";
+import { Ionicons } from "@expo/vector-icons";
+
 
 const CustomKeyboard = ({ onKeyPress }) => {
   const handleKeyPress = (key) => {
@@ -80,7 +81,8 @@ const CustomKeyboard = ({ onKeyPress }) => {
           style={styles.button}
           onPress={() => handleKeyPress("backSpace")}
         >
-          <Icon name="chevron-left" size={22} color="white" />
+          {/* <Icon name="chevron-left" size={22} color="white" /> */}
+          <Ionicons name="ios-backspace-sharp" size={22} color="white" />
         </TouchableOpacity>
       </View>
     </View>

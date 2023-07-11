@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { useRef, useState, useEffect } from "react";
-import Icon from "react-native-vector-icons/FontAwesome";
+import { Ionicons } from "@expo/vector-icons";
 
 function OtpScreen({ navigation, route }) {
   const input1Ref = useRef(null);
@@ -15,7 +15,7 @@ function OtpScreen({ navigation, route }) {
   const input3Ref = useRef(null);
   const input4Ref = useRef(null);
   const input5Ref = useRef(null);
-  const [countdown, setCountDown] = useState(2);
+  const [countdown, setCountDown] = useState(10);
   const [otp1, setOtp1] = useState("");
   const [otp2, setOtp2] = useState("");
   const [otp3, setOtp3] = useState("");
@@ -122,25 +122,21 @@ function OtpScreen({ navigation, route }) {
       {error && <Text style={styles.errorText}>Invalid Otp Entered</Text>}
 
       <View style={styles.timerContainer}>
-        <Text style={styles.titleThree}>
-          Resend Code in...
-          {countdown > 0 ? (
-            countdown
-          ) : (
-            <View style={styles.buttonView}>
-              {/* <TouchableOpacity style={styles.buttonCall}>
-                 <Text style={styles.buttonText}>Resend Code</Text>
-               </TouchableOpacity> */}
-              {/* this button is making the app to crash as the timer ends */}
-            </View>
-          )}
-        </Text>
+        <Text style={styles.titleThree}> Resend Code in... </Text>
+        {countdown > 0 ? (
+          <Text>{countdown}</Text>
+        ) : (
+          <TouchableOpacity style={styles.buttonCall}>
+            <Text style={styles.buttonText}>Resend Code</Text>
+          </TouchableOpacity>
+        )}
       </View>
+
       <View style={styles.confirmButton}>
         <TouchableOpacity onPress={confirmingOtp}>
           <Text style={styles.confirmText}>
             Next
-            <Icon name="chevron-right" style={styles.nextIcon} />
+            <Ionicons name="ios-arrow-forward" style={styles.nextIcon} />
           </Text>
         </TouchableOpacity>
       </View>
@@ -188,7 +184,7 @@ const styles = StyleSheet.create({
   buttonCall: {
     backgroundColor: "transparent",
     borderRadius: 20,
-    alignItems: "justify",
+    marginLeft: 2,
   },
   buttonText: {
     color: "grey",

@@ -4,8 +4,7 @@ import PinScreen from "../screens/Pinscreen/PinScreen";
 import HomeScreen from "../screens/HomeScreen";
 import OtpScreen from "../screens/OtpScreen";
 import MainScreen from "../screens/MainScreen/MainScreen";
-// import Discover from "../screens/MainScreen/Discover";
-// import Payments from "../screens/MainScreen/Payments";
+import Discover from "../screens/MainScreen/Discover";
 import NavBottom from "../screens/MainScreen/NavBottom";
 import Menu from "../screens/MainScreen/Menu";
 
@@ -14,7 +13,7 @@ const Stack = createStackNavigator();
 const Navigation = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen
+      {/* <Stack.Screen
         name="Home"
         component={HomeScreen}
         options={{ headerShown: false }}
@@ -28,18 +27,18 @@ const Navigation = () => {
         name="Pin"
         component={PinScreen}
         options={{ headerShown: false }}
-      />
+      /> */}
       <Stack.Screen
         name="Main"
         component={MainScreen}
         options={{ headerShown: false }}
-      />
+      /> 
 
-      {/* <Stack.Screen
+      <Stack.Screen
         name="Discovered"
         component={Discover}
         options={{ headerShown: false }}
-      /> */}
+      />
 
       <Stack.Screen
         name="Nav"
