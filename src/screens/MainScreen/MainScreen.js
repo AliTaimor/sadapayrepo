@@ -11,14 +11,20 @@ import { Card } from "react-native-elements";
 import Discover from "./Discover";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 function MainScreen() {
+  const navigation = useNavigation();
+
+  const handlePress = () => {
+    navigation.navigate("Current");
+  };
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollContainer}>
         <View style={styles.cardWrapper}>
           <View style={styles.cardOne}>
-            <TouchableOpacity activeOpacity={0.9}>
+            <TouchableOpacity activeOpacity={0.9} onPress={handlePress}>
               <Card containerStyle={styles.cardOneContainer}>
                 <Card.Title style={styles.cardOneTitle}>
                   Current balance
@@ -70,7 +76,6 @@ function MainScreen() {
           <Card containerStyle={styles.transactionContainer}>
             <View style={styles.innerTransacView}>
               <Card.Title>
-                {/* <Icon name="exclamation-circle" style={styles.exclamIcon} /> */}
                 <Ionicons name="ios-warning" style={styles.exclamIcon} />
               </Card.Title>
 
@@ -109,22 +114,22 @@ const styles = StyleSheet.create({
   },
   cardOneContainer: {
     backgroundColor: "lightgreen",
-    borderRadius: 20,
+    borderRadius: 25,
     height: 300,
-    width: "100%",
+    width: "102%",
     marginLeft: 20,
   },
   cardTwoContainer: {
     backgroundColor: "orange",
-    borderRadius: 20,
+    borderRadius: 25,
     height: 140,
-    width: "80%",
+    width: "83%",
     marginTop: 30,
   },
   cardThreeContainer: {
     backgroundColor: "skyblue",
-    borderRadius: 20,
-    width: "80%",
+    borderRadius: 25,
+    width: "83%",
     height: 140,
     marginBttom: 30,
   },
@@ -183,12 +188,12 @@ const styles = StyleSheet.create({
   },
   transactionContainer: {
     backgroundColor: "lightgray",
-    marginBottom: 500,
-    borderRadius: 10,
+    marginBottom: 400,
+    borderRadius: 20,
     height: 90,
-    padding: 10,
-    width: 350,
-    marginRight: 25,
+    padding: 14,
+    width: "88%",
+    marginRight: 24,
   },
   exclamIcon: {
     fontSize: 35,
@@ -200,7 +205,7 @@ const styles = StyleSheet.create({
   },
   discoverView: {
     position: "absolute",
-    top: 500,
+    top: 480,
   },
   cardWrapper: {
     flexDirection: "row",

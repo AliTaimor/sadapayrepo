@@ -6,9 +6,7 @@ import {
   View,
   ScrollView,
 } from "react-native";
-// import Icon from "react-native-vector-icons/FontAwesome";
-import { Ionicons } from '@expo/vector-icons';
-
+import { Ionicons } from "@expo/vector-icons";
 
 function Discover() {
   return (
@@ -16,15 +14,11 @@ function Discover() {
       <View style={styles.header}>
         <Text style={styles.headerText}>
           Discover
-          {/* <Icon name="play-circle" style={styles.playIcon} /> */}
           <Ionicons name="play-circle" style={styles.playIcon} />
-
         </Text>
         <View style={styles.timesIconView}>
           <TouchableOpacity>
-            {/* <Icon name="times" style={styles.timesIcon} /> */}
             <Ionicons name="close-circle" style={styles.timesIcon} />
-
           </TouchableOpacity>
         </View>
       </View>
@@ -36,7 +30,6 @@ function Discover() {
           </View>
 
           <View style={styles.card}>
-
             <Text style={styles.cardText}>Load Money to your account</Text>
           </View>
 
@@ -89,10 +82,10 @@ const styles = StyleSheet.create({
   },
   cardText: {
     fontSize: 15,
-    justifyContent:"space-around",
+    justifyContent: "space-around",
     color: "black",
     marginTop: 70,
-    marginRight: 18
+    marginRight: 18,
   },
   bottomView: {
     position: "absolute",

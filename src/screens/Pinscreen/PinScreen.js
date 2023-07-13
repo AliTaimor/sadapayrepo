@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Icon from "react-native-vector-icons/FontAwesome";
 import { Ionicons } from "@expo/vector-icons";
 
 import myLogo from "../../Image/myLogo.png";

@@ -2,7 +2,6 @@ import { StatusBar } from "expo-status-bar";
 import React from "react";
 import PhoneInput from "react-native-phone-number-input";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
-// import Icon from "react-native-vector-icons/FontAwesome";
 import { useNavigation } from "@react-navigation/native";
 import { useState } from "react";
 import { Ionicons } from "@expo/vector-icons";
@@ -32,12 +31,7 @@ function HomeScreen() {
       {error && <Text style={styles.errorText}>Invalid phone number</Text>}
 
       <TouchableOpacity style={styles.button} onPress={handleContinue}>
-        {/* <Icon
-          name="arrow-right"
-          size={20}
-          color="white"
-          style={styles.buttonIcon}
-        /> */}
+        
           <Ionicons
                     name="ios-arrow-forward"
                     style={styles.buttonIcon}

@@ -1,17 +1,41 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { useState } from "react";
-import { useNavigation } from "@react-navigation/native";
-import { Ionicons } from '@expo/vector-icons';
+import {
+  useNavigation,
+  useIsFocused,
+  useRoute,
+} from "@react-navigation/native";
+import { Ionicons } from "@expo/vector-icons";
+import BottomSheet from "./BottomSheet";
 
 function NavBottom() {
   const [activeTab, setActiveTab] = useState("");
+  const [bottomSheetVisible, setBottomSheetVisible] = useState(false);
   const tab = [
     { name: "Personal", Ionicons: "ios-home" },
     { name: "Payments", Ionicons: "ios-cash" },
     { name: "More", Ionicons: "ios-menu" },
   ];
   const navigation = useNavigation();
+  const isFocused = useIsFocused();
+  const route = useRoute();
+
+  useEffect(() => {
+    if (isFocused) {
+      // Set the active tab based on the current route
+      const currentRouteName = route.name;
+
+      if (currentRouteName === "Main") {
+        setActiveTab(0);
+      } else if (currentRouteName === "More") {
+        setActiveTab(2);
+      } else {
+        setActiveTab("");
+      }
+    }
+  }, [isFocused, route]);
+
   const handleNavigation = (index) => {
     setActiveTab(index);
 
@@ -19,6 +43,8 @@ function NavBottom() {
       navigation.navigate("Main");
     } else if (index === 2) {
       navigation.navigate("More");
+    } else if (index === 1) {
+      setBottomSheetVisible(!bottomSheetVisible); // Open the bottom sheet
     }
   };
 
@@ -35,9 +61,16 @@ function NavBottom() {
             size={24}
             color={activeTab === index ? "#007AFF" : "#999999"}
           />
-          <Text style={styles.tabText}>{tab.name}</Text>
+          <Text
+            style={[styles.tabText, activeTab === index && styles.activeText]}
+          >
+            {tab.name}
+          </Text>
         </TouchableOpacity>
       ))}
+      {bottomSheetVisible && (
+        <BottomSheet onClose={() => setBottomSheetVisible(false)} />
+      )}
     </View>
   );
 }
