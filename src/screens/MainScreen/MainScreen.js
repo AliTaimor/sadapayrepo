@@ -151,7 +151,7 @@ const styles = StyleSheet.create({
   },
 
   cardThreeText: {
-    marginTop: 30,
+    marginTop: "12%",
     fontSize: 19,
     fontWeight: "bold",
     color: "white",
@@ -188,12 +188,12 @@ const styles = StyleSheet.create({
   },
   transactionContainer: {
     backgroundColor: "lightgray",
-    marginBottom: 400,
+    marginBottom: "100%",
+    marginTop: "7%",
     borderRadius: 20,
     height: 90,
     padding: 14,
     width: "88%",
-    marginRight: 24,
   },
   exclamIcon: {
     fontSize: 35,

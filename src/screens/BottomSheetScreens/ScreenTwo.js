@@ -50,26 +50,28 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     borderRadius: 10,
     marginHorizontal: 20,
-    justifyContent: "center",
     marginTop: 110,
     borderRadius: 20,
   },
   innerCardContent: {
     flexDirection: "row",
-    marginLeft: 10,
+    marginLeft: "4%",
+    marginTop: "10%",
   },
   iconOne: {
     fontSize: 42,
     color: "darkred",
+    marginRight: "2%",
   },
   cardText: {
     fontSize: 20,
     fontWeight: "bold",
+
   },
   cardTextTwo: {
     fontSize: 13,
     color: "grey",
-    marginRight: 30,
+    
   },
   mainTitle: {
     fontSize: 26,

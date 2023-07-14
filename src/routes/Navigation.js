@@ -17,7 +17,7 @@ const Stack = createStackNavigator();
 const Navigation = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen
+      {/* <Stack.Screen
         name="Home"
         component={HomeScreen}
         options={{ headerShown: false }}
@@ -31,7 +31,7 @@ const Navigation = () => {
         name="Pin"
         component={PinScreen}
         options={{ headerShown: false }}
-      />
+      /> */}
       <Stack.Screen
         name="Main"
         component={MainScreen}

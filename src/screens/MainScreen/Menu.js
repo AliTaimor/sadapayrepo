@@ -7,7 +7,7 @@ function Menu() {
   return (
     <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollContainer}>
-        <View styles={styles.cardsView}>
+        <View style={styles.cardsView}>
           <View style={styles.cardProfile}>
             <Ionicons name="ios-person" style={styles.profileIcon} />
 
@@ -84,8 +84,7 @@ const styles = StyleSheet.create({
     backgroundColor: "beige",
   },
   cardsView: {
-    flexDirection: "column",
-    alignItems: "center",
+    flexWrap: "wrap",
   },
   bottomView: {
     position: "absolute",
@@ -93,33 +92,34 @@ const styles = StyleSheet.create({
   },
   cardProfile: {
     flexDirection: "row",
-    width: 370,
     height: 70,
     backgroundColor: "white",
     borderRadius: 20,
-    alignItems: "center",
-    marginTop: 75,
-    marginLeft: 10,
+    alignItems: "flex-start",
+    width: "94%",
+    marginTop: "20%",
+    marginLeft: "3%",
   },
   ProfileText: {
     fontSize: 20,
     marginLeft: 20,
     fontWeight: "bold",
+    marginTop: 20,
   },
   profileIcon: {
     fontSize: 30,
     marginLeft: 10,
+    marginTop: 20,
   },
   cardBusiness: {
     backgroundColor: "lightgrey",
-    marginTop: 20,
     flexDirection: "row",
     height: 100,
     borderRadius: 20,
     alignItems: "center",
-    marginTop: 30,
-    marginLeft: 10,
-    width: 370,
+    width: "94%",
+    marginLeft: "3%",
+    marginTop: "7%",
   },
   businessText: {
     fontSize: 14,
@@ -132,9 +132,9 @@ const styles = StyleSheet.create({
     height: 160,
     borderRadius: 20,
     alignItems: "center",
-    marginTop: 30,
-    marginLeft: 10,
-    width: 370,
+    width: "94%",
+    marginLeft: "3%",
+    marginTop: "7%",
   },
   limitText: {
     fontSize: 20,
@@ -167,19 +167,19 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     height: 100,
     borderRadius: 20,
-    marginTop: 26,
-    marginLeft: 10,
-    width: 370,
+    marginTop: "7%",
+    marginLeft: "3%",
+    width: "94%",
   },
   increaseView: {
     flexDirection: "row",
-    marginTop: 20,
+    marginTop: 9,
   },
   increaseText: {
     fontSize: 16,
     marginLeft: 20,
     fontWeight: "bold",
-    marginTop: 7,
+    marginTop: 25,
   },
   increaseTextTwo: {
     color: "grey",
@@ -190,9 +190,9 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     height: 160,
     borderRadius: 20,
-    marginTop: 30,
-    marginLeft: 10,
-    width: 370,
+    width: "94%",
+    marginLeft: "3%",
+    marginTop: "7%",
   },
 
   rewardsText: {
@@ -217,12 +217,11 @@ const styles = StyleSheet.create({
   },
   cardChat: {
     backgroundColor: "white",
-
+    marginTop: "7%",
     height: 100,
     borderRadius: 20,
-    marginTop: 30,
-    marginLeft: 10,
-    width: 370,
+    width: "94%",
+    marginLeft: "3%",
   },
   chatText: {
     fontWeight: "bold",
@@ -242,9 +241,9 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     height: 160,
     borderRadius: 20,
-    marginTop: 30,
-    marginLeft: 10,
-    width: 370,
+    width: "94%",
+    marginLeft: "3%",
+    marginTop: "7%",
   },
   infoText: {
     fontSize: 16,

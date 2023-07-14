@@ -16,11 +16,6 @@ function Discover() {
           Discover
           <Ionicons name="play-circle" style={styles.playIcon} />
         </Text>
-        <View style={styles.timesIconView}>
-          <TouchableOpacity>
-            <Ionicons name="close-circle" style={styles.timesIcon} />
-          </TouchableOpacity>
-        </View>
       </View>
 
       <View style={styles.scrollContainer}>
@@ -97,10 +92,6 @@ const styles = StyleSheet.create({
   timesIcon: {
     fontSize: 18,
     color: "grey",
-  },
-  timesIconView: {
-    marginRight: 10,
-    marginTop: 5,
   },
 });
 
