@@ -117,41 +117,38 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     height: 300,
     width: "102%",
-    marginLeft: 20,
   },
   cardTwoContainer: {
     backgroundColor: "orange",
     borderRadius: 25,
-    height: 140,
+    height: 143,
     width: "83%",
-    marginTop: 30,
+    marginTop: "13%",
   },
   cardThreeContainer: {
     backgroundColor: "skyblue",
     borderRadius: 25,
     width: "83%",
-    height: 140,
-    marginBttom: 30,
+    height: 143,
   },
   cardImage: {
     height: 150,
     borderRadius: 30,
   },
   cardOneText: {
-    marginBottom: 10,
     fontWeight: "bold",
     color: "white",
     fontSize: 22,
   },
   cardTwoText: {
-    marginTop: 50,
+    marginTop: "36%",
     fontWeight: "bold",
     color: "white",
     fontSize: 18,
   },
 
   cardThreeText: {
-    marginTop: "12%",
+    marginTop: "20%",
     fontSize: 19,
     fontWeight: "bold",
     color: "white",
@@ -159,12 +156,10 @@ const styles = StyleSheet.create({
 
   cardParent: {
     flexDirection: "column",
-    marginLeft: 200,
-    marginTop: 60,
   },
 
   cardOne: {
-    marginTop: 10,
+    marginTop: "3%",
   },
   arrowIcon: {
     fontSize: 20,
@@ -192,7 +187,6 @@ const styles = StyleSheet.create({
     marginTop: "7%",
     borderRadius: 20,
     height: 90,
-    padding: 14,
     width: "88%",
   },
   exclamIcon: {
@@ -211,7 +205,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   otherCardWrapper: {
-    marginHorizontal: 20,
+    marginHorizontal: "5%",
   },
   twoCard: {},
 });

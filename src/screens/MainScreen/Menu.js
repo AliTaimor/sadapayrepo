@@ -15,7 +15,7 @@ function Menu() {
           </View>
 
           <View style={styles.cardBusiness}>
-            <Ionicons name="ios-briefcase-sharp" style={styles.profileIcon} />
+            <Ionicons name="ios-briefcase-sharp" style={styles.businessIcon} />
 
             <Text style={styles.businessText}>Open a business account</Text>
           </View>
@@ -102,14 +102,14 @@ const styles = StyleSheet.create({
   },
   ProfileText: {
     fontSize: 20,
-    marginLeft: 20,
+    marginLeft: "5%",
     fontWeight: "bold",
-    marginTop: 20,
+    marginTop: "6%",
   },
   profileIcon: {
     fontSize: 30,
-    marginLeft: 10,
-    marginTop: 20,
+    marginLeft: "4%",
+    marginTop: "5%",
   },
   cardBusiness: {
     backgroundColor: "lightgrey",
@@ -123,9 +123,15 @@ const styles = StyleSheet.create({
   },
   businessText: {
     fontSize: 14,
-    marginLeft: 20,
+    marginLeft: "5%",
     color: "white",
     fontWeight: "bold",
+    marginTop: "2%",
+  },
+  businessIcon: {
+    fontSize: 30,
+    marginLeft: "4%",
+    marginTop: "3%",
   },
   cardLimit: {
     backgroundColor: "white",
@@ -138,23 +144,23 @@ const styles = StyleSheet.create({
   },
   limitText: {
     fontSize: 20,
-    marginRight: 290,
-    marginTop: 20,
+    marginRight: "80%",
+    marginTop: "6%",
   },
   cardInnerView: {
     flexDirection: "row",
-    marginTop: 10,
+    marginTop: "5%",
     borderBottomWidth: 4,
     borderBottomColor: "red",
     borderBottomEndRadius: 30,
   },
   innerViewTwo: {
-    marginTop: 30,
+    marginTop: "4%",
   },
   innerTextOne: {
     fontWeight: "bold",
-    marginRight: 170,
-    marginBottom: 10,
+    marginRight: "46%",
+    marginBottom: "3%",
   },
   innerTextTwo: {
     fontWeight: "bold",
@@ -173,18 +179,17 @@ const styles = StyleSheet.create({
   },
   increaseView: {
     flexDirection: "row",
-    marginTop: 9,
   },
   increaseText: {
     fontSize: 16,
-    marginLeft: 20,
+    marginLeft: "4%",
     fontWeight: "bold",
-    marginTop: 25,
+    marginTop: "7%",
   },
   increaseTextTwo: {
     color: "grey",
-    marginTop: 10,
-    marginLeft: 20,
+    marginTop: "2%",
+    marginLeft: "5%",
   },
   cardRewards: {
     backgroundColor: "white",
@@ -197,22 +202,22 @@ const styles = StyleSheet.create({
 
   rewardsText: {
     fontSize: 16,
-    marginLeft: 20,
+    marginLeft: "4%",
     fontWeight: "bold",
-    marginTop: 7,
+    marginTop: "4%",
   },
   rewardsView: {
     flexDirection: "column",
-    marginLeft: 20,
+    marginLeft: "8%",
   },
   rewardsViewText: {
-    marginTop: 50,
-    marginLeft: 50,
+    marginTop: "12%",
+    marginLeft: "15%",
     fontWeight: "bold",
   },
   rewardsViewTextTwo: {
-    marginTop: 10,
-    marginLeft: 48,
+    marginTop: "1%",
+    marginLeft: "14%",
     fontWeight: "bold",
   },
   cardChat: {
@@ -226,13 +231,13 @@ const styles = StyleSheet.create({
   chatText: {
     fontWeight: "bold",
     fontSize: 15,
-    marginLeft: 15,
-    marginTop: 3,
+    marginLeft: "4%",
+    marginTop: "1%",
   },
   chatInnerView: {
     flexDirection: "row",
-    marginTop: 40,
-    marginLeft: 20,
+    marginTop: "10%",
+    marginLeft: "4%",
   },
   chatIcon: {
     fontSize: 24,
@@ -247,9 +252,9 @@ const styles = StyleSheet.create({
   },
   infoText: {
     fontSize: 16,
-    marginLeft: 20,
+    marginLeft: "5%",
     fontWeight: "bold",
-    marginTop: 7,
+    marginTop: "4%",
   },
 });
 
