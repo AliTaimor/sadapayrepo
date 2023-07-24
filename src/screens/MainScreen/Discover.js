@@ -1,21 +1,13 @@
 import React from "react";
-import {
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-  ScrollView,
-} from "react-native";
+import { StyleSheet, Text, View, ScrollView } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
 function Discover() {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.headerText}>
-          Discover
-          <Ionicons name="play-circle" style={styles.playIcon} />
-        </Text>
+        <Text style={styles.headerText}>Discover</Text>
+        <Ionicons name="play-circle" style={styles.playIcon} />
       </View>
 
       <View style={styles.scrollContainer}>
@@ -48,14 +40,12 @@ function Discover() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "beige",
   },
   header: {
     flexDirection: "row",
     paddingTop: 30,
     paddingBottom: 10,
     paddingHorizontal: 20,
-    justifyContent: "space-between",
   },
   headerText: {
     fontSize: 20,
@@ -87,10 +77,9 @@ const styles = StyleSheet.create({
     bottom: 0,
   },
   playIcon: {
-    fontSize: 18,
-  },
-  timesIcon: {
-    fontSize: 18,
+    fontSize: 20,
+    marginLeft: "2%",
+    marginTop: "1%",
     color: "grey",
   },
 });

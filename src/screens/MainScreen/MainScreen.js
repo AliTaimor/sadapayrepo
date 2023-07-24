@@ -24,11 +24,9 @@ function MainScreen() {
       <ScrollView contentContainerStyle={styles.scrollContainer}>
         <View style={styles.cardWrapper}>
           <View style={styles.cardOne}>
-            <TouchableOpacity activeOpacity={0.9} onPress={handlePress}>
-              <Card containerStyle={styles.cardOneContainer}>
-                <Card.Title style={styles.cardOneTitle}>
-                  Current balance
-                </Card.Title>
+            <TouchableOpacity activeOpacity={0.8} onPress={handlePress}>
+              <View style={styles.cardOneContainer}>
+                <Text style={styles.cardOneTitle}> Current balance</Text>
                 <Text style={styles.cardOneText}>Rs.1000</Text>
                 <View style={styles.arrowContainer}>
                   <Ionicons
@@ -36,25 +34,24 @@ function MainScreen() {
                     style={styles.arrowRightIcon}
                   />
                 </View>
-              </Card>
+              </View>
             </TouchableOpacity>
           </View>
-          <View style={styles.otherCardWrapper}>
+
+          <View style={styles.cardParent}>
             <View style={styles.twoCard}>
-              <TouchableOpacity activeOpacity={0.9}>
-                <Card containerStyle={styles.cardTwoContainer}>
-                  <Card.Title>
-                    <Ionicons name="ios-arrow-down" style={styles.arrowIcon} />
-                  </Card.Title>
+              <TouchableOpacity activeOpacity={0.8}>
+                <View style={styles.cardTwoContainer}>
+                  <Ionicons name="ios-arrow-down" style={styles.arrowIcon} />
                   <Text style={styles.cardTwoText}>Load Money</Text>
-                </Card>
+                </View>
               </TouchableOpacity>
             </View>
 
             <View style={styles.threeCard}>
-              <TouchableOpacity activeOpacity={0.9}>
-                <Card containerStyle={styles.cardThreeContainer}>
-                  <Card.Title>
+              <TouchableOpacity activeOpacity={0.8}>
+                <View style={styles.cardThreeContainer}>
+                  <View style={styles.arrowThreeContainer}>
                     <Ionicons
                       name="ios-arrow-up"
                       style={styles.threeArrowIcon}
@@ -63,10 +60,10 @@ function MainScreen() {
                       name="ios-arrow-down"
                       style={styles.threeArrowIcon}
                     />
-                  </Card.Title>
+                  </View>
 
                   <Text style={styles.cardThreeText}>Send & Request</Text>
-                </Card>
+                </View>
               </TouchableOpacity>
             </View>
           </View>
@@ -102,92 +99,118 @@ export default MainScreen;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: "beige",
+    flexWrap: "wrap",
     alignItems: "center",
-    justifyContent: "center",
   },
 
   bottomView: {
     position: "absolute",
     bottom: 0,
   },
+
   cardOneContainer: {
     backgroundColor: "lightgreen",
-    borderRadius: 25,
+    borderRadius: 20,
     height: 300,
-    width: "102%",
+    width: "138%",
   },
-  cardTwoContainer: {
-    backgroundColor: "orange",
-    borderRadius: 25,
-    height: 143,
-    width: "83%",
-    marginTop: "13%",
+  cardOneTitle: {
+    color: "white",
+    fontSize: 18,
+    marginTop: "8%",
+    marginLeft: 4,
   },
-  cardThreeContainer: {
-    backgroundColor: "skyblue",
-    borderRadius: 25,
-    width: "83%",
-    height: 143,
-  },
-  cardImage: {
-    height: 150,
-    borderRadius: 30,
+  cardOneTitle: {
+    color: "white",
+    fontSize: 18,
+    marginTop: "10%",
+    marginLeft: 9,
   },
   cardOneText: {
     fontWeight: "bold",
     color: "white",
     fontSize: 22,
+    marginLeft: 13,
   },
-  cardTwoText: {
-    marginTop: "36%",
-    fontWeight: "bold",
+  arrowRightIcon: {
     color: "white",
-    fontSize: 18,
+    fontSize: 25,
+  },
+  arrowContainer: {
+    position: "absolute",
+    top: 200,
+    right: 15,
   },
 
-  cardThreeText: {
-    marginTop: "20%",
-    fontSize: 19,
-    fontWeight: "bold",
-    color: "white",
-  },
-
-  cardParent: {
-    flexDirection: "column",
-  },
-
-  cardOne: {
-    marginTop: "3%",
+  cardTwoContainer: {
+    backgroundColor: "orange",
+    borderRadius: 25,
+    height: 146,
+    width: "90%",
+    marginTop: "14%",
   },
   arrowIcon: {
     fontSize: 20,
     color: "white",
+    textAlign: "center",
+    marginTop: "15%",
+  },
+  cardTwoText: {
+    marginTop: "40%",
+    fontWeight: "bold",
+    color: "white",
+    fontSize: 20,
+    textAlign: "center",
+  },
+
+  cardThreeContainer: {
+    backgroundColor: "skyblue",
+    borderRadius: 25,
+    height: 146,
+    width: "90%",
+    marginTop: "6%",
   },
   threeArrowIcon: {
     color: "white",
     fontSize: 20,
   },
-  arrowRightIcon: {
+  arrowThreeContainer: {
+    flexDirection: "row",
+    marginTop: "18%",
+    marginLeft: "36%",
+  },
+
+  cardThreeText: {
+    fontSize: 22,
+    fontWeight: "bold",
     color: "white",
-    fontSize: 30,
+    marginTop: "20%",
+    textAlign: "center",
   },
-  arrowContainer: {
-    position: "absolute",
-    top: 200,
-    right: 0,
+
+  cardParent: {
+    flexDirection: "column",
+    marginLeft: "15%",
+    marginTop: "1%",
   },
-  cardOneTitle: {
-    color: "white",
+
+  cardOne: {
+    marginTop: "7%",
+    paddingLeft: "5%",
+    paddingRight: "2%",
   },
+
   transactionContainer: {
     backgroundColor: "lightgray",
     marginBottom: "100%",
     marginTop: "7%",
     borderRadius: 20,
     height: 90,
-    width: "88%",
+    width: "93%",
+    elevation: 20,
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
   },
   exclamIcon: {
     fontSize: 35,
@@ -203,9 +226,8 @@ const styles = StyleSheet.create({
   },
   cardWrapper: {
     flexDirection: "row",
+    justifyContent: "space-between",
   },
-  otherCardWrapper: {
-    marginHorizontal: "5%",
-  },
+
   twoCard: {},
 });

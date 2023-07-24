@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { Ionicons } from "@expo/vector-icons";
+import React, { useState, useEffect } from "react";
 
 import myLogo from "../../Image/myLogo.png";
 
@@ -26,14 +25,18 @@ function PinScreen({ navigation }) {
     }
   };
 
-  const confirmingPin = () => {
+  useEffect(() => {
     const verificationPin = "29870";
-    if (pin === verificationPin) {
-      navigation.navigate("Main");
-    } else if (pin.length === 0) {
-      alert("Please enter a valid pin number");
-    } else setError(true);
-  };
+    if (pin.length === 5) {
+      if (pin === verificationPin) {
+        navigation.navigate("Main");
+      } else {
+        setError(true);
+      }
+    } else {
+      setError(false);
+    }
+  }, [pin]);
 
   return (
     <View style={styles.container}>
@@ -52,14 +55,6 @@ function PinScreen({ navigation }) {
         </TouchableOpacity>
       </View>
       <CustomKeyboard onKeyPress={handleKeyPress} />
-      <View style={styles.nextView}>
-        <TouchableOpacity onPress={confirmingPin}>
-          <View style={styles.nextText}>
-            <Text style={styles.textNext}>Next</Text>
-            <Ionicons name="ios-arrow-forward" style={styles.nextIcon} />
-          </View>
-        </TouchableOpacity>
-      </View>
     </View>
   );
 }
@@ -84,28 +79,9 @@ const styles = StyleSheet.create({
     borderBottomWidth: 4,
     borderBottomColor: "gainsboro",
     borderRadius: 2,
-    borderColor: "transparent",
+    color: "black",
   },
-  nextView: {
-    position: "absolute",
-    flexDirection: "row",
-    bottom: 40,
-    right: 50,
-    paddingVertical: 1,
-  },
-  nextIcon: {
-    fontSize: 17,
-    color: "white",
-    marginTop: 2,
-  },
-  nextText: {
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  textNext: {
-    color: "white",
-    fontSize: 16,
-  },
+
   forgotPass: {
     position: "absolute",
     top: 360,

@@ -32,7 +32,9 @@ function ScreenTwo() {
       <View style={styles.centerView}>
         <Ionicons name="search" style={styles.iconTwo} />
         <Text style={styles.centerText}>No recent bills</Text>
-        <Text style={styles.centerTextTwo}>Pay a new bill anytime to view here</Text>
+        <Text style={styles.centerTextTwo}>
+          Pay a new bill anytime to view here
+        </Text>
       </View>
     </View>
   );
@@ -42,7 +44,6 @@ export default ScreenTwo;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "beige",
   },
   card: {
     width: "90%",
@@ -52,6 +53,10 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
     marginTop: 110,
     borderRadius: 20,
+    elevation: 20,
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
   },
   innerCardContent: {
     flexDirection: "row",
@@ -66,12 +71,10 @@ const styles = StyleSheet.create({
   cardText: {
     fontSize: 20,
     fontWeight: "bold",
-
   },
   cardTextTwo: {
     fontSize: 13,
     color: "grey",
-    
   },
   mainTitle: {
     fontSize: 26,

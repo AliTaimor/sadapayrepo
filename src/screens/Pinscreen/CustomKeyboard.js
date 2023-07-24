@@ -81,7 +81,6 @@ const CustomKeyboard = ({ onKeyPress }) => {
           style={styles.button}
           onPress={() => handleKeyPress("backSpace")}
         >
-          {/* <Icon name="chevron-left" size={22} color="white" /> */}
           <Ionicons name="ios-backspace-sharp" size={22} color="white" />
         </TouchableOpacity>
       </View>
@@ -114,8 +113,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: "bold",
     color: "white",
-    // borderBottomWidth: 1,
-    // borderBottomColor: "black",
+  
   },
 
   Lastrow: {

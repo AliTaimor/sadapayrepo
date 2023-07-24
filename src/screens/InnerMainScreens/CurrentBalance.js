@@ -25,7 +25,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "beige",
-   
   },
   iconBack: {
     color: "black",
@@ -34,10 +33,9 @@ const styles = StyleSheet.create({
     marginLeft: 340,
     fontWeight: "bold",
   },
-  text:{
+  text: {
     marginTop: 60,
     marginLeft: 100,
     marginTop: 300,
-
   },
 });

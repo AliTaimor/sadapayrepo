@@ -6,7 +6,7 @@ import { Ionicons } from "@expo/vector-icons";
 function Menu() {
   return (
     <View style={styles.container}>
-      <ScrollView contentContainerStyle={styles.scrollContainer}>
+      <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
         <View style={styles.cardsView}>
           <View style={styles.cardProfile}>
             <Ionicons name="ios-person" style={styles.profileIcon} />
@@ -35,7 +35,7 @@ function Menu() {
 
           <View style={styles.cardIncrease}>
             <View style={styles.increaseView}>
-              <Ionicons name="wallet-outline" style={styles.profileIcon} />
+              <Ionicons name="wallet-outline" style={styles.incIcon} />
 
               <Text style={styles.increaseText}>Increase my Limit</Text>
             </View>
@@ -50,7 +50,6 @@ function Menu() {
             <View style={styles.rewardsView}>
               <Text style={styles.rewardsViewText}>Golden Tickets</Text>
               <Text style={styles.rewardsViewTextTwo}>
-                {" "}
                 Invite Friends to sadapay
               </Text>
             </View>
@@ -68,8 +67,30 @@ function Menu() {
           </View>
           <View style={styles.cardInfo}>
             <Text style={styles.infoText}>Info</Text>
+            <View style={styles.rewardsView}>
+              <Text style={styles.rewardsViewText}>Privacy Policy</Text>
+              <Text style={styles.rewardsViewTextTwo}>
+                Terms and Conditions
+              </Text>
+              <Text style={styles.rewardsViewTextTwo}>Schedule of charges</Text>
+            </View>
+          </View>
+          <View style={styles.cardChat}>
+            <View style={styles.chatInnerView}>
+              <Ionicons name="ios-phone-portrait" style={styles.chatIcon} />
+
+              <Text style={styles.chatText}>Manage devices</Text>
+            </View>
+          </View>
+          <View style={styles.cardChat}>
+            <View style={styles.chatInnerView}>
+              <Ionicons name="ios-log-out" style={styles.chatIcon} />
+
+              <Text style={styles.chatText}>Log Out</Text>
+            </View>
           </View>
         </View>
+        <View style={styles.bottomSpace} />
       </ScrollView>
 
       <View style={styles.bottomView}>
@@ -80,12 +101,15 @@ function Menu() {
 }
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: "beige",
+    flexGrow: 1,
   },
   cardsView: {
     flexWrap: "wrap",
   },
+  bottomSpace: {
+    height: 100,
+  },
+
   bottomView: {
     position: "absolute",
     bottom: 0,
@@ -110,6 +134,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     marginLeft: "4%",
     marginTop: "5%",
+    color: "lightblue",
   },
   cardBusiness: {
     backgroundColor: "lightgrey",
@@ -122,7 +147,7 @@ const styles = StyleSheet.create({
     marginTop: "7%",
   },
   businessText: {
-    fontSize: 14,
+    fontSize: 15,
     marginLeft: "5%",
     color: "white",
     fontWeight: "bold",
@@ -132,6 +157,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     marginLeft: "4%",
     marginTop: "3%",
+    color: "white",
   },
   cardLimit: {
     backgroundColor: "white",
@@ -143,27 +169,33 @@ const styles = StyleSheet.create({
     marginTop: "7%",
   },
   limitText: {
-    fontSize: 20,
+    fontSize: 15,
     marginRight: "80%",
     marginTop: "6%",
+    color: "grey",
   },
   cardInnerView: {
     flexDirection: "row",
     marginTop: "5%",
-    borderBottomWidth: 4,
+    borderBottomWidth: 5,
     borderBottomColor: "red",
     borderBottomEndRadius: 30,
+    justifyContent: "space-between",
   },
   innerViewTwo: {
     marginTop: "4%",
   },
   innerTextOne: {
     fontWeight: "bold",
-    marginRight: "46%",
+    marginRight: "45%",
+
     marginBottom: "3%",
+    justifyContent: "center",
+    fontSize: 13,
   },
   innerTextTwo: {
     fontWeight: "bold",
+    fontSize: 13,
   },
   innerViewThree: {
     fontSize: 12,
@@ -176,20 +208,31 @@ const styles = StyleSheet.create({
     marginTop: "7%",
     marginLeft: "3%",
     width: "94%",
+    elevation: 20,
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
   },
   increaseView: {
     flexDirection: "row",
   },
   increaseText: {
-    fontSize: 16,
+    fontSize: 15,
     marginLeft: "4%",
     fontWeight: "bold",
     marginTop: "7%",
+  },
+  incIcon: {
+    fontSize: 30,
+    marginLeft: "4%",
+    marginTop: "5%",
+    color: "red",
   },
   increaseTextTwo: {
     color: "grey",
     marginTop: "2%",
     marginLeft: "5%",
+    fontSize: 13,
   },
   cardRewards: {
     backgroundColor: "white",
@@ -201,7 +244,7 @@ const styles = StyleSheet.create({
   },
 
   rewardsText: {
-    fontSize: 16,
+    fontSize: 15,
     marginLeft: "4%",
     fontWeight: "bold",
     marginTop: "4%",
@@ -212,8 +255,9 @@ const styles = StyleSheet.create({
   },
   rewardsViewText: {
     marginTop: "12%",
-    marginLeft: "15%",
+    marginLeft: "14%",
     fontWeight: "bold",
+    fontSize: 13,
   },
   rewardsViewTextTwo: {
     marginTop: "1%",
@@ -240,7 +284,8 @@ const styles = StyleSheet.create({
     marginLeft: "4%",
   },
   chatIcon: {
-    fontSize: 24,
+    fontSize: 30,
+    color: "red",
   },
   cardInfo: {
     backgroundColor: "white",
@@ -251,7 +296,7 @@ const styles = StyleSheet.create({
     marginTop: "7%",
   },
   infoText: {
-    fontSize: 16,
+    fontSize: 15,
     marginLeft: "5%",
     fontWeight: "bold",
     marginTop: "4%",

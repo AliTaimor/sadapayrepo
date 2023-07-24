@@ -31,7 +31,6 @@ export default ScreenThree;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "beige",
   },
   iconBack: {
     color: "black",
